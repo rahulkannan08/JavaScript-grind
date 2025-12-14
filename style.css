@@ -1,0 +1,12 @@
+h1 {
+    color: aqua;
+    justify-content: relative ;
+}
+h2 {
+    color: rgb(12, 12, 199);
+    align-items: center;
+    
+}
+body {
+    background-color: rgb(40, 35, 35);
+}
