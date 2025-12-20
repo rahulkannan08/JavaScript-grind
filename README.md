@@ -309,7 +309,7 @@ console.log(friendAge > myAge);    // true (30 is greater than 25)
 console.log(myAge < 20);           // false (25 is not less than 20)
 
 // Greater than or equal to / Less than or equal to
-console.log(myAge >= 25);          // true (25 is greater than or equal to 25)
+console.log(myAge >= 25);                    // true (25 is greater than or equal to 25)
 console.log(myAge <= 24);          // false (25 is not less than or equal to 24)
 
 // Real-world examples
@@ -332,6 +332,11 @@ console.log(`Is it too hot outside? ${isTooHot}`);
 
 ### 🎯 Practice Challenge
 Create variables for your current grade, the passing grade, and use comparison operators to determine if you're passing, failing, or got a perfect score.
+
+const Crnt_Grade = 'F';
+const Passing_Grade = 'A';
+
+console.log(Passing_Grade === Crnt_Grade ? "perfect score" : "failed");
 
 ---
 

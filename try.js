@@ -105,3 +105,17 @@ console.log("Original Price: $" + og_price);
 console.log("Discount Amount: $" + discount);
 console.log("Final Price after Discount: $" + final_price);
 console.log("i'll save",discount); */
+
+
+
+/* ### 🎯 Practice Challenge
+Create variables for your current grade, the passing grade, and use comparison operators to determine if you're passing, failing, or got a perfect score.
+ */
+
+const Crnt_Grade = 'A';
+const Passing_Grade = 'A';
+const ans = true;
+
+console.log(ans)
+
+console.log(Passing_Grade === Crnt_Grade ? "passed": "failed");   
