@@ -169,25 +169,23 @@ chkbtn.addEventListener('click', (e) => {
 
 /* ### 🎯 Practice Challenge
 Create a template for a movie review that includes the movie title, your rating, release year, and a brief comment. Use template literals to make it look professional. */
-
-
-const mtl = document.querySelector('#Mtitle');
-const mrt = document.querySelector('#Mrating');
-const Myr = document.querySelector('#Myear');
-const Mcmt = document.querySelector('#cmnt');
-// const btnSee = document.querySelector('#Movie');
-const btnSee = document.getElementById('Movie')
-const FullDeatils = document.querySelector('#MovieDetails')
-btnSee.addEventListener('click', (e) => {
-    e.preventDefault();
-    FullDeatils.innerHTML = `
-    <h1 id="Movietitle">${mtl.value}</h1>
-    <h2 id="MovieRating">${mrt.value}</h2>
-    <h3 id="MovieYear">${Myr.value}</h3>
-    <h4 id="Moviecmts">${Mcmt.value}</h4>
-    `;
-    mtl.value = '';
-    mrt.value = '';
-    Myr.value = '';
-    Mcmt.value = '';
-});
+  const mtl = document.querySelector('#Mtitle');
+  const mrt = document.querySelector('#Mrating');
+  const Myr = document.querySelector('#Myear');
+  const Mcmt = document.querySelector('#cmnt');
+  // const btnSee = document.querySelector('#Movie');
+  const btnSee = document.getElementById('Movie')
+  const FullDeatils = document.querySelector('#MovieDetails')
+  btnSee.addEventListener('click', (e) => {
+      e.preventDefault();
+      FullDeatils.innerHTML = `
+      <h1 id="Movietitle">${mtl.value}</h1>
+      <h2 id="MovieRating">${mrt.value}</h2>
+      <h3 id="MovieYear">${Myr.value}</h3>
+      <h4 id="Moviecmts">${Mcmt.value}</h4>
+      `;
+      mtl.value = '';
+      mrt.value = '';
+      Myr.value = '';
+      Mcmt.value = '';
+  }); 

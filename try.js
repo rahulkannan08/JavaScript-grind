@@ -2,13 +2,6 @@
 ctrl + / = single ln cmnd 
 */
 
-
-
-/*//### 🎯 Practice Challenge
-//Create a simple weather app that suggests what to wear based on temperature and whether it's raining. Include at least 3 different weather scenarios.
-
-const prompt = require ('prompt-sync')();
-
 // // 0-10 freeze -  jrkin with high protection for cold 
 // if rains add waterproof dress too
 // // 10-20 cold  - jerkin is enough
@@ -18,7 +11,14 @@ const prompt = require ('prompt-sync')();
 // // 30+ hot -  covering dress only is enoughn
 //  if rains add waterproof dress too
 
-const temp = prompt("enter temperature");
+/*//### 🎯 Practice Challenge
+//Create a simple weather app that suggests what to wear based on temperature and whether it's raining. Include at least 3 different weather scenarios.
+*/
+//const prompt = require ('prompt-sync')();
+
+
+
+/* const temp = prompt("enter temperature");
 const raining = prompt("is't raining (y/n)").toLowerCase();
 
 
@@ -61,15 +61,15 @@ function thoduda() {
         return;
     }
     console.log("The temperature is", temperature);
-}
+} */
 
-*/
+
 
 
 // ### 🎯 Practice Challenge
 //Create a program that determines if someone can rent a car. They need to be at least 21 years old, have a valid license, and either have insurance OR be willing to buy the rental company's insurance.
 // const prompt = require('prompt-sync')();
-/*const rent = prompt("are you gonna rent your car ? (y/n)").toLowerCase();
+/* const rent = prompt("are you gonna rent your car ? (y/n)").toLowerCase();
 
 if (rent === 'y') {
     console.log("Proceed to next step");
@@ -90,10 +90,11 @@ if (rent === 'y') {
 
 } else {
     console.log("Try to sell cars");
-}*/
+} */
 
 
 /* //Create a simple calculator that figures out how much you'd save with a discount. Calculate the original price, discount amount, and final price.
+
 //const prompt = require ('prompt-sync')();
 const og_price = prompt("enter original price: ");
 const discount = prompt("enter discount : ");
@@ -112,10 +113,97 @@ console.log("i'll save",discount); */
 Create variables for your current grade, the passing grade, and use comparison operators to determine if you're passing, failing, or got a perfect score.
  */
 
-const Crnt_Grade = 'A';
+/* const Crnt_Grade = 'A';
 const Passing_Grade = 'A';
 const ans = true;
 
 console.log(ans)
 
 console.log(Passing_Grade === Crnt_Grade ? "passed": "failed");   
+
+
+const fruits = ["ap","or","gr","ban","awa","water"]
+console.log(fruits);
+console.log(fruits[fruits.length-1]);
+
+
+
+const grades = [85, 92, 78, 96, 88];
+let total = 0;
+
+// Calculate average grade (we'll learn easier ways to do this later)
+for (let i = 0; i < grades.length; i++) {
+    total += grades[i];     // Add each grade to total
+}
+
+const average = total / grades.length;
+console.log(`toatal ${total} and Average grade: ${average.toFixed}`);  */
+
+// ### 🎯 Practice Challenge
+// Create an array of your favorite movies, then practice accessing different movies by their index. Add a new movie to the list and remove one you don't like anymore.
+/* const fav_mvs = ["a","b","c","d","e","f","g"];
+console.log(fav_mvs);
+
+console.log(`${fav_mvs.push("h")} added ${fav_mvs}`);
+
+console.log(`${fav_mvs.pop()} deleted `);
+
+
+const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+const numberss = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+// const firstThree = numbers.slice(0,-3);              // [1, 2, 3]
+// const lastThree = numbers.slice(-3);                 // [8, 9, 10]
+// const middle = numbers.slice(3, 7);  
+// console.log(firstThree)
+// console.log(lastThree)
+
+
+const M =numbers.join(" and ")
+console.log(M)
+ */
+
+
+const obj = {
+    id: 1 ,
+    name : "rahul",
+    age : 12,
+    isHeHired : false,
+    avg_screen_time_inPC : 4.5,
+    sem_marks : {
+        1:200,
+        2:300,
+        3:400,
+        4:500
+    },
+    intrsts : ['a','b','c','d'],
+    a : [1,2,3]
+}
+let a = 1;
+console.log(obj.a[0]+obj.a[1]+obj.a[2])
+console.log(typeof(obj.a))
+console.log(typeof(a))
+
+
+// ### 🎯 Practice Challenge
+// Create an object representing your favorite restaurant. Include properties like name, cuisine type, average cost, rating, and an array of your favorite dishes. Practice accessing and modifying different properties.
+const res_name = "International";
+
+const fav_hotel = {
+    name : res_name,
+    cuisine : "multi cuisine",
+    avg_cost : 40000000,
+    rating : 5.0,
+    fav_foods : ['a','b','c','d','e'],
+    chefs : {
+        korea : "Kim Jong Un",
+        tn:"rahul",
+        UP:"aditi",
+        american:"trump",
+        other:"other top chefs"
+    }
+}
+const best_chef = fav_hotel.chefs.
+console.log(fav_hotel);
+console.log(fav_hotel.chefs.korea);
+console.log(fav_hotel.fav_foods[2]);
