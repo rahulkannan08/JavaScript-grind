@@ -164,7 +164,7 @@ console.log(M)
  */
 
 
-const obj = {
+/* const obj = {
     id: 1 ,
     name : "rahul",
     age : 12,
@@ -184,7 +184,7 @@ console.log(obj.a[0]+obj.a[1]+obj.a[2])
 console.log(typeof(obj.a))
 console.log(typeof(a))
 
-
+ */
 // ### 🎯 Practice Challenge
 // Create an object representing your favorite restaurant. Include properties like name, cuisine type, average cost, rating, and an array of your favorite dishes. Practice accessing and modifying different properties.
 const res_name = "International";
@@ -201,9 +201,90 @@ const fav_hotel = {
         UP:"aditi",
         american:"trump",
         other:"other top chefs"
+    },
+    add : function(a,b){
+        return a+b;
     }
 }
-const best_chef = fav_hotel.chefs.
-console.log(fav_hotel);
-console.log(fav_hotel.chefs.korea);
-console.log(fav_hotel.fav_foods[2]);
+// const best_chef = fav_hotel.chefs.
+// console.log(fav_hotel);
+// console.log(fav_hotel.chefs.korea);
+// console.log(fav_hotel.fav_foods[2]);
+
+
+// const keys = Object.keys(fav_hotel.chefs)
+// console.log(keys)
+
+fav_hotel.dif = "difference";
+// console.log(fav_hotel.add(10,10))
+console.log(fav_hotel)
+
+delete fav_hotel.dif
+
+console.log(fav_hotel)
+
+// ### 🎯 Practice Challenge
+// Create a "Pet" object with properties like name, type, age, and hunger level. Add methods like `feed()`, `play()`, and `getStatus()` that interact with these properties. Make the pet's hunger increase over time and require feeding.
+
+
+const modernObject = {
+    name: "Modern Object",
+    
+    // Old way to write methods
+    oldMethod: function() {
+        return "This is the old way";
+    },
+    
+    // New shorthand way (same functionality)
+    newMethod() {
+        return "This is the new way";
+    }
+};
+
+const shoppingCart = {
+    items: [],
+    total: 0,
+    
+    addItem: function(name, price, quantity = 1) {
+        const item = {
+            name: name,
+            price: price,
+            quantity: quantity,
+            subtotal: price * quantity
+        };
+        this.items.push(item);
+        this.calculateTotal();
+        console.log(`Added ${quantity} ${name}(s) to cart`);
+    },
+    
+    removeItem: function(name) {
+        const index = this.items.findIndex(item => item.name === name);
+        if (index !== -1) {
+            this.items.splice(index, 1);
+            this.calculateTotal();
+            console.log(`Removed ${name} from cart`);
+        } else {
+            console.log(`${name} not found in cart`);
+        }
+    },
+    
+    calculateTotal: function() {
+        this.total = 0;
+        for (let i = 0; i < this.items.length; i++) {
+            this.total += this.items[i].subtotal;
+        }
+    },
+    
+    showCart: function() {
+        console.log("Shopping Cart:");
+        if (this.items.length === 0) {
+            console.log("Your cart is empty");
+        } else {
+            for (let i = 0; i < this.items.length; i++) {
+                const item = this.items[i];
+                console.log(`- ${item.name}: ${item.price} x ${item.quantity} = ${item.subtotal}`);
+            }
+            console.log(`Total: ${this.total.toFixed(2)}`);
+        }
+    }
+};
