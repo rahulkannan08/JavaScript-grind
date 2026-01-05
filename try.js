@@ -187,7 +187,7 @@ console.log(typeof(a))
  */
 // ### 🎯 Practice Challenge
 // Create an object representing your favorite restaurant. Include properties like name, cuisine type, average cost, rating, and an array of your favorite dishes. Practice accessing and modifying different properties.
-const res_name = "International";
+/* const res_name = "International";
 
 const fav_hotel = {
     name : res_name,
@@ -205,7 +205,7 @@ const fav_hotel = {
     add : function(a,b){
         return a+b;
     }
-}
+} */
 // const best_chef = fav_hotel.chefs.
 // console.log(fav_hotel);
 // console.log(fav_hotel.chefs.korea);
@@ -215,19 +215,19 @@ const fav_hotel = {
 // const keys = Object.keys(fav_hotel.chefs)
 // console.log(keys)
 
-fav_hotel.dif = "difference";
+/* fav_hotel.dif = "difference";
 // console.log(fav_hotel.add(10,10))
 console.log(fav_hotel)
 
 delete fav_hotel.dif
 
-console.log(fav_hotel)
+console.log(fav_hotel) */
 
 // ### 🎯 Practice Challenge
 // Create a "Pet" object with properties like name, type, age, and hunger level. Add methods like `feed()`, `play()`, and `getStatus()` that interact with these properties. Make the pet's hunger increase over time and require feeding.
 
 
-const modernObject = {
+/* const modernObject = {
     name: "Modern Object",
     
     // Old way to write methods
@@ -239,8 +239,9 @@ const modernObject = {
     newMethod() {
         return "This is the new way";
     }
-};
+}; */
 
+// Real-world example: Shopping cart with methods
 const shoppingCart = {
     items: [],
     total: 0,
@@ -288,3 +289,13 @@ const shoppingCart = {
         }
     }
 };
+
+// Using the shopping cart
+shoppingCart.addItem("T-Shirt", 19.99, 2);
+shoppingCart.addItem("Jeans", 49.99);
+shoppingCart.addItem("Sneakers", 79.99);
+shoppingCart.showCart();
+shoppingCart.removeItem("Jeans");
+shoppingCart.showCart();
+
+
