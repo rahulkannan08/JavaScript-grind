@@ -1,0 +1,30 @@
+1.write a html program to develop a static home page using frames.
+
+2.write a html program to develop a static webpage for shopping carts.
+
+3.create a link to move within a single page rather than to lead another page.
+
+4.write a javascript program to validate user login page
+
+5.write a program to build a chat module using html,css,js
+
+6.create a form & validate the contents of the form using js
+
+7.exequte the CRUD of mongoDB & operations in MongoDB
+
+8.illustrate of WHERE clause AND OR operation  in mongodb
+
+9.demonstrate creating of different types of indexes on collection [ uniquq,sprsecompound and multikey indexed ]
+
+10.create a node js server using express.js that createa a Reas,ubdated and delete student details nad stored in mongodb DB.the information about the user should be obtained from a HTML form
+
+11.create a simple signup & login mechanism & authenticate the user using cookies the user info's can be stored in mongoDB and the server should be stored in mongoDB and the server should be build by using noede js and express js
+
+12.create a simple shopping cart with react and node
+
+13.write a program to create a simple calculator application using react
+
+14.create a simple login form using react js
+
+15.write a program to create a voting application using react js
+

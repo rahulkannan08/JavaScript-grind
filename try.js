@@ -241,7 +241,7 @@ console.log(fav_hotel) */
     }
 }; */
 
-// Real-world example: Shopping cart with methods
+/* // Real-world example: Shopping cart with methods
 const shoppingCart = {
     items: [],
     total: 0,
@@ -289,13 +289,135 @@ const shoppingCart = {
         }
     }
 };
-
 // Using the shopping cart
 shoppingCart.addItem("T-Shirt", 19.99, 2);
 shoppingCart.addItem("Jeans", 49.99);
 shoppingCart.addItem("Sneakers", 79.99);
 shoppingCart.showCart();
 shoppingCart.removeItem("Jeans");
-shoppingCart.showCart();
+shoppingCart.showCart(); */
 
 
+// ### 🎯 Practice Challenge
+// Create a "Pet" object with properties like name, type, age, and hunger level. Add methods like `feed()`, `play()`, and `getStatus()` that interact with these properties. Make the pet's hunger increase over time and require feeding.
+
+/*  const pet = {
+    name : "vicuts",
+    type : "laptop",
+    age : 2,
+    hunger_level : 5,
+     feed : function(food_amount){
+        this.hunger_level -= food_amount;
+        if(this.hunger_level < 0) this.hunger_level = 0;
+        console.log(`${this.name} has been fed. Hunger level is now ${this.hunger_level}.`);
+    },
+    play : function(){
+        this.hunger_level += 1;
+        console.log(`${this.name} is playing. Hunger level is now ${this.hunger_level}.`);
+    },
+    getStatus : function(){
+        if(this.hunger_level > 0) console.log(`${this.name} is hungry. Hunger level is ${this.hunger_level}.`);
+        else console.log(`${this.name} is not hungry. Hunger level is ${this.hunger_level}.`);
+    } 
+    feed(food_amount){
+        this.hunger_level -= food_amount;
+        if(this.hunger_level < 0) this.hunger_level = 0;
+        console.log(`${this.name} has been fed. Hunger level is now ${this.hunger_level}.`);
+    },
+    play(){
+        this.hunger_level += 1;
+        console.log(`${this.name} is playing. Hunger level is now ${this.hunger_level}.`);
+    }, 
+    getStatus(){
+        if(this.hunger_level > 0) console.log(`${this.name} is hungry. Hunger level is ${this.hunger_level}.`);
+        else console.log(`${this.name} is not hungry. Hunger level is ${this.hunger_level}.`);    
+    }
+
+} */
+
+/*
+console.log(pet);
+
+pet.feed(2);
+pet.play();
+pet.getStatus(); 
+*/ 
+
+/* function CuP(name,age=18,country="dunoo"){
+    return {
+        name : name,
+        age : age,
+        country : country,
+        pflcrted: new Date().toLocaleDateString()
+    };
+}
+
+console.log(CuP("a",24,"IND")); */
+
+
+/* const  CuuP = (n,a=10,cn="IND") =>{
+    return {
+        n : n,
+        a : a,
+        cn : cn,
+        pflcrted: new Date().toLocaleDateString()
+    };
+  
+};
+console.log(CuuP()) */
+
+/* function calculateTip(bill,tippr){
+    const tip = bill*tippr/100;
+    return tip;
+}
+
+function spbl(bill,nop){
+    return bill/nop;
+}
+ */
+/* const bill = 100;
+const tippr = 10;
+const nop = 5;
+
+
+console.log(calculateTip(bill,tippr),spbl(bill,nop));
+
+
+dinner(
+    function calculateTip(bill,tippr){
+    const tip = bill*tippr/100;
+    console.log(`the tip value is ${tip}`);
+    return tip;
+    
+},
+
+    function spbl(bill,nop){
+        console.log(`the split value is ${bill/nop}`);
+        return bill/nop;
+}
+
+)
+
+dinner().calculateTip(100,10)
+
+/*Create a function called `calculateTip` that takes a bill amount and tip percentage, then returns the tip amount. Create another function called `splitBill` that takes the total bill and number of people, then returns how much each person pays. Use both functions together to solve a real dinner scenario.*/
+/* function dinner(calcTip,splitB){
+    const bill = 150;
+    const tippr = 15;
+    const nop = 3;
+    return {
+        calculateTip : function(bill,tippr){
+            const tip = bill*tippr/100;
+            console.log(`the tip value is ${tip}`);
+            return tip;
+        },
+        splitBill : function(bill,nop){
+            console.log(`the split value is ${bill/nop}`);
+            return bill/nop;
+        }
+    }
+}
+ */ 
+/* 
+### 🎯 Practice Challenge
+Create a function called `orderPizza` that takes required parameters (size, crust), optional parameters with defaults (sauce, cheese), and uses rest parameters for toppings. Make it return an order summary with total price calculation. */
