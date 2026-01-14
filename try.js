@@ -421,3 +421,100 @@ dinner().calculateTip(100,10)
 /* 
 ### 🎯 Practice Challenge
 Create a function called `orderPizza` that takes required parameters (size, crust), optional parameters with defaults (sauce, cheese), and uses rest parameters for toppings. Make it return an order summary with total price calculation. */
+
+
+
+
+
+
+/* 
+function createUserCard({name, email, age, department = "General"}) {
+    // Destructuring the object parameter
+    return `
+    ┌─────────────────────────────┐
+    │ ${name.padEnd(27)} │
+    │ ${email.padEnd(27)} │
+    │ Age: ${age.toString().padEnd(22)} │
+    │ Dept: ${department.padEnd(21)} │
+    └─────────────────────────────┘
+    `;
+}
+
+// Passing an object as argument
+const userData = {
+    name: "Emma Thompson",
+    email: "emma@company.com", 
+    age: 32,
+    department: "Marketing"
+};
+
+console.log(createUserCard(userData));
+
+// Can also pass object directly
+console.log(createUserCard({
+    name: "Alex Rodriguez",
+    email: "alex@company.com",
+    age: 28
+    // department will use default value
+}));
+
+// Function that returns a function (higher-order function)
+function createMultiplier(factor) {
+    return function(number) {
+        return number * factor;
+    };
+}
+
+// Create specialized functions
+const double = createMultiplier(2);
+const triple = createMultiplier(3);
+const times10 = createMultiplier(10);
+
+console.log(`Double 7: ${double(7)}`);        // 14
+console.log(`Triple 5: ${triple(5)}`);        // 15
+console.log(`10 times 8: ${times10(8)}`);     // 80
+
+*/
+
+function orderPizza(size, crust, sauce = "tomato", cheese = "mozzarella", ...toppings) {
+    let basePrice = 0;
+
+    if (size === "small") {
+        basePrice = 8;
+    } else if (size === "medium") {
+        basePrice = 10;
+    } else if (size === "large") {
+        basePrice = 12;
+    }
+
+    if (crust === "thin") {
+        basePrice += 2;
+    } else if (crust === "thick") {
+        basePrice += 3;
+    }
+
+    if (sauce === "barbecue") {
+        basePrice += 1;
+    }
+
+    if (cheese === "cheddar") {
+        basePrice += 1;
+    }    
+
+    return {
+        size: size,
+        crust: crust,
+        sauce: sauce,
+        cheese: cheese,
+        toppings: toppings,
+        price: basePrice    
+    }
+}
+
+const myOrder = orderPizza("large", "thin", undefined, "mozzarella", "pepperoni", "mushrooms", "olives");
+console.log(myOrder);
+const anotherOrder = orderPizza("medium", "thick", undefined, "cheddar", "bell peppers", "onions");
+console.log(anotherOrder);
+
+
+
