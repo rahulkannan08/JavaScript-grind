@@ -476,7 +476,7 @@ console.log(`10 times 8: ${times10(8)}`);     // 80
 
 */
 
-function orderPizza(size, crust, sauce = "tomato", cheese = "mozzarella", ...toppings) {
+/* function orderPizza(size, crust, sauce = "tomato", cheese = "mozzarella", ...toppings) {
     let basePrice = 0;
 
     if (size === "small") {
@@ -514,7 +514,109 @@ function orderPizza(size, crust, sauce = "tomato", cheese = "mozzarella", ...top
 const myOrder = orderPizza("large", "thin", undefined, "mozzarella", "pepperoni", "mushrooms", "olives");
 console.log(myOrder);
 const anotherOrder = orderPizza("medium", "thick", undefined, "cheddar", "bell peppers", "onions");
-console.log(anotherOrder);
+console.log(anotherOrder); */
 
+
+
+/* function orderPizza() {
+    console.log("return example");
+}
+
+const a = orderPizza();
+console.log(a);
+
+ */
+
+
+/* 
+### 🎯 Practice Challenge
+Create a function called `analyzeText` that takes a string and returns an object with properties like wordCount, characterCount, hasNumbers, and longestWord. Test it with different types of text input. */
+
+/* function charcount(s){
+    return s.length;
+}   
+function longestwrd(s){
+    const words = s.split(" ");
+    let longest = "";   
+    for(let i=0;i<words.length;i++){
+        if(words[i].length > longest.length){
+            longest = words[i];
+        }
+    }
+    return longest;
+}   
+function hasnum(s){
+    const regex = /\d/;
+    return regex.test(s);
+}
+
+function analyzeText(s){
+    sobj = {
+        wordcount : s.split(" ").length,
+        charcount : charcount(s),
+        hasnum : hasnum(s),
+        longwrd : longestwrd(s)
+    } 
+ return sobj
+}       
+
+const s = "abcdefghijklmnopqrstuvwxyz123456789";
+const output = analyzeText(s)
+console.log(output); */
+
+
+
+/* function analyzeText(s){
+    sobj = {
+        wordcount : s.lenght(),
+        charcount : s.charcount(),
+        hasnum : s.includes(),
+        longwrd : s.lonstwrd()
+    } 
+ return sobj
+} */
+
+
+ /**
+ * Analyzes a text string and returns an object with various properties.
+ *
+ * @param {string} text The input string to analyze.
+ * @returns {object} An object containing wordCount, characterCount, hasNumbers, and longestWord.
+ */
+function analyzeText(text) {
+    // 1. Character Count (including spaces and punctuation)
+    const characterCount = text.length;
+
+    // 2. Word Count
+    // Use regex to find all sequences of non-whitespace characters
+    const words = text.match(/\S+/g) || [];
+    const wordCount = words.length;
+
+    // 3. Check for Numbers
+    // Use regex /\d/ to test if any digit exists in the string
+    const hasNumbers = /\d/.test(text);
+
+    // 4. Longest Word
+    let longestWord = '';
+    if (wordCount > 0) {
+        // First, clean up words to remove trailing punctuation for more accurate length calculation
+        const cleanedWords = words.map(word => word.replace(/[.,!?;:"'()]/g, ''));
+
+        // Sort words by length in descending order and pick the first one
+        cleanedWords.sort((a, b) => b.length - a.length);
+        longestWord = cleanedWords[0];
+    }
+
+    return {
+        wordCount,
+        characterCount,
+        hasNumbers,
+        longestWord
+    };
+}
+
+const sampleText = "Hello world! This is a test string with numbers 12345 and some longwordhere.";
+const analysisResult = analyzeText(sampleText);
+console.log(analysisResult);
 
 
