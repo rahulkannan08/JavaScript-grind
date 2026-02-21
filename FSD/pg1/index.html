@@ -1,15 +1,23 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Static Home Page Using Frames</title>
 </head>
-<frameset rows="20%,80%">
-    <frame src="header.html">
-        <frameset cels="25%,75%">
-            <frame src="menu.html">
-                <frame src="content.html">
-        </frameset>
+
+<frameset rows="20%, 70%, 10%">
+    
+    <!-- Top Header Frame -->
+    <frame src="header.html" name="headerFrame">
+
+    <!-- Middle Section (Navigation + Content) -->
+    <frameset cols="25%, 75%">
+        <frame src="menu.html" name="menuFrame">
+        <frame src="home.html" name="contentFrame">
+    </frameset>
+
+    <!-- Bottom Footer Frame -->
+    <frame src="footer.html" name="footerFrame">
+
 </frameset>
+
 </html>
