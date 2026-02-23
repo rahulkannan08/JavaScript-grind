@@ -1,20 +1,49 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <title>Simple Chat</title>
-    <link rel="stylesheet" href="chat.css">
-</head>
+    <head>
+    <style stylesheet="chat.css"></style>
+    </head>
 <body>
 
-<div class="chat-box">
-    <h3>Chat Module</h3>
+<div id="chatBox"></div>
 
-    <div id="chat-area"></div>
+<input type="text" id="messageInput" placeholder="Type a message...">
+<button onclick="sendMessage()">Send</button>
 
-    <input type="text" id="message" placeholder="Type a message">
-    <button onclick="sendMessage()">Send</button>
-</div>
+<script>
+function sendMessage() {
+    var input = document.getElementById("messageInput");
+    var message = input.value.trim();
 
-<script src="chat.js"></script>
+    if (message === "") {
+        alert("Please enter a message");
+        return;
+    }
+
+    var chatBox = document.getElementById("chatBox");
+
+    var userMsg = document.createElement("div");
+    userMsg.innerText = message;
+    chatBox.appendChild(userMsg);
+
+    input.value = "";
+
+    setTimeout(function () {
+        var botMsg = document.createElement("div");
+        botMsg.innerText = "Bot: " + autoReply(message);
+        chatBox.appendChild(botMsg);
+    }, 1000);
+}
+
+function autoReply(msg) {
+    msg = msg.toLowerCase();
+    if (msg.includes("hello")) return "Hello! How can I help you?";
+    if (msg.includes("hi")) return "Hi there!";
+    if (msg.includes("how are you")) return "I'm doing great";
+    if (msg.includes("bye")) return "Goodbye! Have a nice day.";
+    return "Sorry, I didn't understand that.";
+}
+</script>
+
 </body>
 </html>
