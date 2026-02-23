@@ -1,29 +1,34 @@
-// 6.create a form & validate the contents of the form using js
 function validateForm() {
     var name = document.getElementById("username").value;
     var email = document.getElementById("email").value;
     var password = document.getElementById("password").value;
+
+    var errorElement = document.getElementById("errmsg");
     var errorMessage = "";
-    if (name == "") {
-        errorMessage += "Name must be filled out.\n";
-    }       
-    if (email == "") {
+
+    // Clear previous message
+    errorElement.textContent = "";
+
+    if (name === "") {
+        errorMessage += "Username must be filled out.\n";
+    }
+
+    if (email === "") {
         errorMessage += "Email must be filled out.\n";
     }
-    if (password == "") {
+
+    if (password === "") {
         errorMessage += "Password must be filled out.\n";
-    } else if (password.length < 6) {
+    } 
+    else if (password.length < 6) {
         errorMessage += "Password must be at least 6 characters long.\n";
-    }   
-    if (errorMessage != "") {
-        alert(errorMessage);
+    }
+
+    if (errorMessage !== "") {
+        errorElement.textContent = errorMessage;
         return false;
-    }
-    else {
+    } else {
         alert("Form submitted successfully!");
+        return true;
     }
-    return true;
 }
-// document.getElementById("myForm").onsubmit = function() {
-//     return validateForm();
-// };  
