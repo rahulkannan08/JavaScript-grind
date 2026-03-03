@@ -4,23 +4,37 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login Form</title>
+    <style rel="stylesheet" href="C:\VSCODE prg\javascript\27\day1\style.css" ></style>
 </head>
 <body>
     <div class="forms">
         <div class="login">
-            <input type="text" placeholder="Enter Username">
-            <input type="password" placeholder="Enter Password">
-            <button id="login-button">Login</button>
+            <form action="" id="loginForm" class="form active" >
+                <h2>LOGIN</h2>
+                <input type="text" placeholder="Enter Username">
+                <input type="password" placeholder="Enter Password">
+                <button  type="submit" id="login-button">Login</button>
+            </form>
         </div>
         <div class="signup">
-            <input type="text" placeholder="Enter Username">
-            <input type="password" placeholder="Enter Password">
-            <input type="password" placeholder="confirm password" id="confirm-password">
-            <button id="signup-button">Sign Up</button>
+
+            <form action="" class="form">
+                <h2>SIGN UP</h2>
+                <input type="text" placeholder="Enter Username">
+                <input type="password" placeholder="Enter Password">
+                <input type="password" placeholder="confirm password" id="confirm-password">
+                <button type="submit" id="signup-button">Sign Up</button>
+            </form>
 
         </div>
 
-
+        <div class="toggle-btn">
+            <button id="loginBtn" class="active">Login</button>
+            <button id="signupBtn">Sign Up</button>
+        </div>
     </div>
+    <script src="C:\VSCODE prg\javascript\27\day1\script.js"></script>
 </body>
-</html>
+</html> 
+
+
