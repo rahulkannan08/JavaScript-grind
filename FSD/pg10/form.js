@@ -1,64 +1,61 @@
 const express = require("express");
 const mongoose = require("mongoose");
+const path = require("path");
+
 const app = express();
+
 app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
+app.use(express.static("public")); // serve HTML from public folder
+
+// MongoDB connection
 mongoose.connect("mongodb://127.0.0.1:27017/studentDB")
 .then(() => console.log("MongoDB Connected"))
 .catch(err => console.log(err));
+
+// Schema
 const studentSchema = new mongoose.Schema({
   name: String,
   age: Number,
-  course: String});
+  course: String
+});
+
 const Student = mongoose.model("Student", studentSchema);
-app.get("/", async (req, res) => {
+
+
+// Get all students
+app.get("/students", async (req, res) => {
   const students = await Student.find();
-  let output = `
-  <h1>Student Form</h1>
-  <form action="/add" method="POST">
-    Name: <input type="text" name="name" required><br><br>
-    Age: <input type="number" name="age" required><br><br>
-    Course: <input type="text" name="course" required><br><br>
-    <button type="submit">Add Student</button>
-  </form>
-  <h2>Student List</h2>`;
-  students.forEach(s => {
-    output += `
-      <p>
-        ${s.name} | ${s.age} | ${s.course}
-        <a href="/delete/${s._id}">Delete</a> <a href="/update/${s._id}">Update</a>
-      </p>
-    `; });
-  res.send(output);});
+  res.json(students);
+});
+
+
+// Add student
 app.post("/add", async (req, res) => {
   await Student.create(req.body);
-  res.redirect("/");});
+  res.redirect("/");
+});
+
+
+// Delete student
 app.get("/delete/:id", async (req, res) => {
   await Student.findByIdAndDelete(req.params.id);
-  res.redirect("/");});
-app.get("/update/:id", async (req, res) => {
-  const student = await Student.findById(req.params.id);
-  res.send(`
-    <h1>Update Student</h1> 
-    <form action="/update/${student._id}" method="POST">
-      Name: <input type="text" name="name" value="${student.name}" required><br><br>
-      Age: <input type="number" name="age" value="${student.age}" required><br><br>
-      Course: <input type="text" name="course" value="${student.course}" required><br><br>
-      <button type="submit">Update Student</button>
-    </form>
-  `);});
-app.post("/update/:id", async (req, res) => {
-  await Student.findByIdAndUpdate(req.params.id, req.body);
-  res.redirect("/");});
+  res.redirect("/");
+});
+
+
+// Get student for edit
 app.get("/edit/:id", async (req, res) => {
   const student = await Student.findById(req.params.id);
-  res.send(`
-    <h1>Edit Student</h1>
-    <form action="/update/${student._id}" method="POST">
-      Name: <input type="text" name="name" value="${student.name}" required><br><br>
-      Age: <input type="number" name="age" value="${student.age}" required><br><br>
-      Course: <input type="text" name="course" value="${student.course}" required><br><br>
-      <button type="submit">Update Student</button>
-    </form>
-  `);});
+  res.json(student);
+});
 
-app.listen(3000, () => console.log("Server running on port 3000")); 
+
+// Update student
+app.post("/update/:id", async (req, res) => {
+  await Student.findByIdAndUpdate(req.params.id, req.body);
+  res.redirect("/");
+});
+
+// Server start
+app.listen(3000, () => console.log("Server running on port 3000"));
