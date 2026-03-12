@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<body>
+  <h2>Welcome, <span id="username">...</span>!</h2>
+  <p>You are logged in.</p>
+  <a href="/logout">Logout</a>
+  <script>
+    fetch("/me")
+      .then(res => res.json())
+      .then(data => {
+        document.getElementById("username").textContent = data.username;
+      });
+  </script>
+</body>
+</html>
+ 
