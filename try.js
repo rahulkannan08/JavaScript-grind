@@ -617,6 +617,36 @@ function analyzeText(text) {
 
 const sampleText = "Hello world! This is a test string with numbers 12345 and some longwordhere.";
 const analysisResult = analyzeText(sampleText);
-console.log(analysisResult);
+// console.log(analysisResult);
 
 
+// what's your aim and goal = answer ?
+/* 
+for (var i = 0; i < 3; i++) {
+        setTimeout(function() {
+            console.log(`var i: ${i}`);  // Will print 3, 3, 3 (unexpected!)
+        }, 1000);
+    }
+    
+    // Solution with let
+    for (let j = 0; j < 3; j++) {
+        setTimeout(function() {
+            console.log(`let j: ${j}`);  // Will print 0, 1, 2 (expected!)
+        }, 150);
+    }
+ */
+
+/* 
+### 🎯 Practice Challenge
+Create a "Bank Account" function that uses private variables for balance and account number. Provide public methods for deposit, withdraw, and check balance, but make sure the internal data cannot be accessed directly from outside the function.
+
+*/
+
+function reverse(stc){
+    return stc.split("").reverse().join("");
+}
+console.log(reverse("hello world"));
+
+setTimeout(() => {
+    
+}, 1000);

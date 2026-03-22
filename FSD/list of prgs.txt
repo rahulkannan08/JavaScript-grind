@@ -10,11 +10,11 @@
 
 6.create a form & validate the contents of the form using js
 
-7.exequte the CRUD of mongoDB & operations in MongoDB
+7.exequte the CRUD of mongoDB & operations in MongoDB ( 1.INSERT, 2.UPDATE, 3.DELETE, 4.PROJECTION)
 
 8.illustrate of WHERE clause AND OR operation  in mongodb
 
-9.demonstrate creating of different types of indexes on collection [ uniquq,sprsecompound and multikey indexed ]
+9.demonstrate creating of different types of indexes on collection [ unique,sprse, compound and multikey indexed ]
 
 10.create a node js server using express.js that createa a Reas,ubdated and delete student details nad stored in mongodb DB.the information about the user should be obtained from a HTML form
 

@@ -4,19 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <!-- alert(input("Enter your name: ")); -->
+     <button id="alrt" onclick="alert(input('Enter your name: '));">Alert</button>
+
 </head>
 <body>
     <script> 
-        document.write("Hello World! This is a test page.");
+        document.getElementById("alrt").addEventListener("click", function() {
+            alert(prompt("Enter your name: "));
+        });
+        document.write("Hello SSsssssssssssssssss.");
         padend(20, 'hi');
         function padend(totalLength, padString) {
-            let str = "Hello    wwwwwwwwwww";
+            let str = "Ssssssss";
             while (str.length < totalLength) {
                 str += padString;
             }
             document.write("<br>" + str);
         }
-
+        
+        alert(input("Enter your name: "));
 
     </script>
 </body>

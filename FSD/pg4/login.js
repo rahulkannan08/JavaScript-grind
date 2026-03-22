@@ -23,5 +23,5 @@ function validateLogin() {
 
     msg.textContent = "Login successful";
     msg.style.color = "green";
-    return false; // prevent actual form submit for demo
+    return true; // prevent actual form submit for demo
 }
