@@ -642,6 +642,53 @@ Create a "Bank Account" function that uses private variables for balance and acc
 
 */
 
+function BankAccount(accountNUmber, initialBalance=0) {
+    let balance = initialBalance; // Private variable
+    let accNo = accountNUmber; // Private variable
+    return {
+        deposite(amt){
+            if(amt > 0){
+                balance += amt;
+                return `deposited : ${amt}`;
+            }
+            return "invalid deposit amt";
+        },
+
+        withdraw(amt){
+            if(amt > balance){
+                return "insufficient funds";
+            }
+            if(amt >0){
+            balance -= amt;
+            return `withdrawn : ${amt}`;
+            }
+            return "invalid withdraw amt"; 
+        },
+
+        getAccNum(){
+            return `acc no ${accNo}`;
+        },
+
+        checkBalance(){
+            return `current balance : ${balance}`;
+        }
+    };
+}
+
+const acc = BankAccount("123456789", 1000);
+console.log(acc.deposite(2435676));
+console.log(acc.withdraw(5000000));
+console.log(acc.getAccNum());
+console.log(acc.checkBalance());
+
+console.log(acc.balance); // undefined, cannot access private variable
+console.log(acc.accNo); // undefined, cannot access private variable    
+
+
+
+
+
+
 function reverse(stc){
     return stc.split("").reverse().join("");
 }
@@ -650,3 +697,7 @@ console.log(reverse("hello world"));
 setTimeout(() => {
     
 }, 1000);
+
+
+/* ### 🎯 Practice Challenge
+Create a program that simulates rolling dice until you get doubles (same number on both dice). Count how many rolls it takes and display each roll. Use a while loop and make sure to avoid infinite loops with a maximum attempt limit. */
