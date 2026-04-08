@@ -615,8 +615,8 @@ function analyzeText(text) {
     };
 }
 
-const sampleText = "Hello world! This is a test string with numbers 12345 and some longwordhere.";
-const analysisResult = analyzeText(sampleText);
+// const sampleText = "Hello world! This is a test string with numbers 12345 and some longwordhere.";
+// const analysisResult = analyzeText(sampleText);
 // console.log(analysisResult);
 
 
@@ -676,13 +676,57 @@ function BankAccount(accountNUmber, initialBalance=0) {
 }
 
 const acc = BankAccount("123456789", 1000);
-console.log(acc.deposite(2435676));
-console.log(acc.withdraw(5000000));
-console.log(acc.getAccNum());
-console.log(acc.checkBalance());
+// console.log(acc.deposite(2435676));
+// console.log(acc.withdraw(500));
+// console.log(acc.getAccNum());
+// console.log(acc.checkBalance());
 
-console.log(acc.balance); // undefined, cannot access private variable
-console.log(acc.accNo); // undefined, cannot access private variable    
+// console.log(acc.balance); // undefined, cannot access private variable
+// console.log(acc.accNo); // undefined, cannot access private variable    
+
+
+
+
+const Ba = (AccNo,Ini_bal = 0) => {
+    let bal = Ini_bal;
+    let A_no = AccNo;
+
+    return {
+
+         Dep : (Amt) => {
+            if( Amt > 0) {
+                bal+=Amt;
+                return `Deposited ${Amt}`;
+            }
+            return `Invalid Deposite amnt`;
+         },
+
+         Wit : (Amt) => {
+            if( Amt > bal) {
+                return "insufficient funds";
+            }
+            if(Amt > 0) {
+                bal -= Amt;
+                return `withdrawn amnt is ${Amt}`;
+            }
+         },
+            ckBlnc : () => `balance is ${bal}`,
+
+            getAccNum : () => `Acc num is  ${A_no}`
+
+
+         
+    };
+
+};
+
+const Baa = Ba("12345678")
+
+console.log(Baa.Dep(10000));
+console.log(Baa.Wit(1000));
+console.log(Baa.getAccNum())
+console.log(Baa.ckBlnc())
+
 
 
 
