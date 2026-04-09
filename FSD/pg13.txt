@@ -1,0 +1,36 @@
+import { useState } from "react";
+
+
+function Calculator () {
+
+    const [n1,Sn1] = useState("");
+    const [n2,Sn2] = useState("");
+    const [R,Sr] = useState("");
+
+    const Add = () => {
+     Sr(parseFloat(n1) + parseFloat(n2));
+    }
+     const Sup = () => {
+     Sr(parseFloat(n1) - parseFloat(n2));
+    }
+     const Div = () => {
+     Sr(parseFloat(n1) / parseFloat(n2));
+    }
+    return(
+    <>
+        <div>
+            <input type="number" placeholder="enter 1  numer" value={n1} onChange={(e) => Sn1(e.target.value)}/>
+            <input type="number" placeholder="enter 2  numer" value={n2} onChange={(e) => Sn2(e.target.value)}/>
+        </div>
+        <div>
+        <button type="submit" onClick={Add}>+</button>
+        <button type="submit" onClick={Sup}>-</button>
+        <button type="submit" onClick={Div}>/</button>
+        </div>
+
+        <h1>Resule ; {R}</h1>
+        </>
+    )
+}
+
+export default Calculator;

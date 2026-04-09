@@ -1,0 +1,43 @@
+import React,{useState} from "react";
+
+function Login() {
+
+
+    const [un,Sun] = useState("");
+
+    const [pw,Spw] = useState("");
+    
+    const [msg,Smsg] = useState("");
+
+    const HandleClick = (e) => {
+        
+        e.preventDefault();
+        if(un === "rahul" && pw === "rahul"){
+            Smsg("he sucesss")
+        }else {
+            Smsg("he'll maybe")
+        }
+    }
+
+    
+    return(
+
+        <div>
+            <form onSubmit={HandleClick}>
+
+        <div>
+         <label>UN</label>
+         <input type="text" placeholder="Enter Username" value={un} onChange={ (e) => {Sun(e.target.value)}} required/>
+        </div>
+
+        <div>
+         <label>PASS</label>
+         <input type="pass" placeholder="Enter pass" value={pw} onChange={ (e) => {Spw(e.target.value)}} required/>
+        </div>
+        <button type="submit">LOG</button>
+            </form>
+            <h1>{msg}</h1>
+        </div>
+    )
+}
+export default Login;
