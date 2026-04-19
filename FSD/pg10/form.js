@@ -2,7 +2,9 @@ const express = require("express");
 const mongoose = require("mongoose");
 const fs = require("fs");
 const app = express();
+
 app.use(express.urlencoded({ extended: true }));
+
 mongoose.connect("mongodb://127.0.0.1:27017/studentDB")
 .then(() => console.log("MongoDB Connected"));
 const Student = mongoose.model("Student", {
@@ -10,6 +12,7 @@ const Student = mongoose.model("Student", {
   age: Number,
   course: String
 });
+
 app.get("/", async (req, res) => {
   const students = await Student.find();
   let html = fs.readFileSync("./public/index.html", "utf8");
@@ -24,14 +27,17 @@ app.get("/", async (req, res) => {
   list += "</ul>";
   res.send(html + list);
 });
+
 app.post("/add", async (req, res) => {
   await Student.create(req.body);
   res.redirect("/");
 });
+
 app.get("/delete/:id", async (req, res) => {
   await Student.findByIdAndDelete(req.params.id);
   res.redirect("/");
 });
+
 app.get("/edit/:id", async (req, res) => {
   const s = await Student.findById(req.params.id);
   res.send(`
@@ -44,10 +50,12 @@ app.get("/edit/:id", async (req, res) => {
     </form>
   `);
 });
+
 app.post("/update/:id", async (req, res) => {
   await Student.findByIdAndUpdate(req.params.id, req.body);
   res.redirect("/");
 });
+
 app.listen(3000, () => {
   console.log("Server running at http://localhost:3000");
 });
