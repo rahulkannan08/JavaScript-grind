@@ -422,11 +422,6 @@ dinner().calculateTip(100,10)
 ### 🎯 Practice Challenge
 Create a function called `orderPizza` that takes required parameters (size, crust), optional parameters with defaults (sauce, cheese), and uses rest parameters for toppings. Make it return an order summary with total price calculation. */
 
-
-
-
-
-
 /* 
 function createUserCard({name, email, age, department = "General"}) {
     // Destructuring the object parameter
@@ -723,9 +718,9 @@ const Ba = (AccNo,Ini_bal = 0) => {
 const Baa = Ba("12345678")
 
 console.log(Baa.Dep(10000));
-console.log(Baa.Wit(1000));
-console.log(Baa.getAccNum())
-console.log(Baa.ckBlnc())
+// console.log(Baa.Wit(1000));
+// console.log(Baa.getAccNum());
+// console.log(Baa.ckBlnc());
 
 
 

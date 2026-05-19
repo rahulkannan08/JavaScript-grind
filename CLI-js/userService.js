@@ -1,6 +1,6 @@
 const fs = require("fs");
 
-const FILE = "user.json";
+const FILE = "users.json";
 
 function readusers(callback) {
         fs.readFile(FILE, "utf8", (err, data) => {
@@ -15,8 +15,8 @@ function writeUsers(users, callback) {
 }
 
 function addUser(name, email) {
-    readuser((err, users) => {
-        if(err) return console.log("error reading file");
+    readusers((err, users) => {
+        if(err) return console.log("error");
 
         const newUser= {
             id : Date.now(),
@@ -39,7 +39,8 @@ function listUsers(){
 
 function deleteUser(id){
     readusers((err, users) => {
-        const filtered = users.filtered( user => user.id != id);
+        if(err) return console.log("error");
+        const filtered = users.filter( user => user.id != id);
 
         writeUsers(filtered, () => {
             console.log("user deleted");

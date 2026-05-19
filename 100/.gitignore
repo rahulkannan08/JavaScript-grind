@@ -1,0 +1,10 @@
+node_modules
+
+dist
+build
+coverage
+*.log
+*.node
+*.tsbuildinfo   
+package-lock.json
+package.json

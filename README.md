@@ -684,7 +684,7 @@ Create an array of your top 5 favorite books. Practice adding a new book, removi
 Think of an object like a filing folder or a contact card. Instead of just storing one piece of information (like an array), an object stores related information with labels. A contact card has a name, phone number, email, and address - all related to one person. Objects work the same way, storing related data with descriptive labels called "properties."
 
 ### 📝 What You'll Learn
-Objects let you group related information together using key-value pairs. They're perfect for representing real-world things like people, products, or any entity with multiple characteristics.
+  let you group related information together using key-value pairs. They're perfect for representing real-world things like people, products, or any entity with multiple characteristics.
 
 ### 💻 Code Example
 ```javascript

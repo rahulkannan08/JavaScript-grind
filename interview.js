@@ -64,8 +64,8 @@ function maxProduct(a) {
 
 const res = maxProduct([2,3,4,5,6,7,23,24])
 
-// console.log(res.L)
-// console.log(res.S)
+console.log(res.L)
+console.log(res.S)
 
 
 
